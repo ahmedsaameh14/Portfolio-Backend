@@ -1,9 +1,8 @@
 const Profile = require('../models/Profile');
 
 exports.createProfile = async (req, res) => {
-    const newItem = new Profile(req.body);
-    const saved = await newItem.save();
-    res.json(saved);
+    const profile = await Profile.create(req.body);
+    res.json(profile);
 };
 
 exports.getProfile = async (req, res) => {

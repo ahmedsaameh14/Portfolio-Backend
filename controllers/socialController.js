@@ -1,9 +1,8 @@
 const Social = require('../models/Social');
 
 exports.createSocial = async (req, res) => {
-    const newItem = new Social(req.body);
-    const saved = await newItem.save();
-    res.json(saved);
+    const social = await Social.create(req.body);
+    res.json(social);
 };
 
 exports.getSocial = async (req, res) => {

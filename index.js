@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/myData')
 // Routes
 app.use('/profile', require('./routes/profileRoutes'));
 app.use('/social', require('./routes/socialRoutes'));
-// app.use('/about', require('./routes/aboutRoutes'));
+app.use('/about', require('./routes/aboutRoutes'));
 // app.use('/experince', require('./routes/experinceRoutes'));
 // app.use('/projects', require('./routes/projectRoutes'));
 // app.use('/contact', require('./routes/contactRoutes'));
