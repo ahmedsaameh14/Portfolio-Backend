@@ -1,0 +1,1 @@
+const Social = require('../models/Social');
