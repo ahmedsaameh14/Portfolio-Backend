@@ -6,5 +6,9 @@ router.post('/', socialController.createSocial);
 
 router.get('/', socialController.getSocial);
 
+router.put('/:id' , socialController.updateSocial);
+
+router.delete('/:id' , socialController.removeSocial)
+
 
 module.exports = router;

@@ -7,7 +7,7 @@ router.post('/', contactController.createContact);
 
 router.get('/', contactController.getContact);
 
-
+router.delete('/:id' , contactController.removeContact)
 
 
 

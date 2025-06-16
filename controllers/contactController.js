@@ -10,3 +10,8 @@ exports.getContact = async (req, res) => {
     const data = await Contact.find();
     res.json(data);
 }
+
+exports.removeContact = async (req, res) => {
+    await Contact.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Contact deleted' });
+};
