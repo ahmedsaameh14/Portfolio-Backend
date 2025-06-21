@@ -1,21 +1,30 @@
-const Social = require('../models/Social');
+const Social = require("../models/Social");
 
 exports.createSocial = async (req, res) => {
-    const social = await Social.create(req.body);
-    res.json(social);
+  req.body.img = req.file?.filename || null;
+  const social = await Social.create(req.body);
+  res.json(social);
 };
 
 exports.getSocial = async (req, res) => {
-    const data = await Social.find();
-    res.json(data);
-}
+  const data = await Social.find();
+  res.json(data);
+};
 
 exports.updateSocial = async (req, res) => {
-    const updated = await Social.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(updated);
+  const updates = { ...req.body };
+
+  if (req.file) {
+    updates.img = req.file.filename;
+  }
+
+  const updated = await Social.findByIdAndUpdate(req.params.id, updates, {
+    new: true,
+  });
+  res.json(updated);
 };
 
 exports.removeSocial = async (req, res) => {
-    await Social.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Social deleted' });
+  await Social.findByIdAndDelete(req.params.id);
+  res.json({ message: "Social deleted" });
 };
