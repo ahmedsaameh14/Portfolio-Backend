@@ -7,6 +7,8 @@ router.post('/', upload.single('img'), socialController.createSocial);
 
 router.get('/', socialController.getSocial);
 
+router.get('/:id', socialController.getSocialById);
+
 router.put('/:id' , upload.single('img'),  socialController.updateSocial);
 
 router.delete('/:id' , socialController.removeSocial)

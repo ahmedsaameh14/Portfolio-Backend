@@ -7,6 +7,8 @@ router.post('/', upload.single('img'), projectController.createProject);
 
 router.get('/' , projectController.getProject);
 
+router.get('/:id' , projectController.getProjectById);
+
 router.put('/:id' , upload.single('img'), projectController.updateProject);
 
 router.delete('/:id' , projectController.removeProject)

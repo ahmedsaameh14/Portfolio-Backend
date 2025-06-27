@@ -1,0 +1,6 @@
+http://localhost:2000/profile
+http://localhost:2000/social
+http://localhost:2000/about
+http://localhost:2000/experince
+http://localhost:2000/projects
+http://localhost:2000/contact

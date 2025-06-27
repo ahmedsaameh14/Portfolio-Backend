@@ -2,11 +2,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
-app.use('/uploads',express.static('./uploads'));
+app.use('/images',express.static('./images'));
 
-// Create - Config  DB
+// Connect  DB
 mongoose.connect('mongodb://localhost:27017/myData')    
 .then(console.log('✅ Database Connected'));
 
